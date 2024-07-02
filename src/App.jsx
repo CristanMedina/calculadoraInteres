@@ -20,7 +20,7 @@ function App() {
     <div className="App flex flex-col gap-10 justify-center items-center h-screen bg-gray-700">
         <img src={logo} width={100} alt="Logo" />
         <h1 className="text-3xl font-extrabold"> Calculador de Interes </h1>
-        <button className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-lg shadow-md hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" onClick={openModal}>Tasa Interes Simple</button>
+        <button className="px-6 py-3 bg-[#00ff00ff] text-black font-bold rounded-lg shadow-md hover:bg-[#91ff00] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" onClick={openModal}>Tasa Interes Simple</button>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <CalculadorIS />
         </Modal>
