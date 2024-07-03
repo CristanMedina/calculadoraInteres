@@ -60,19 +60,19 @@ const CalculadorIC = ({ onCalculate }) => {
                 <div className="w-full md:w-2/3">
                     <h1 className="text-center text-3xl font-semibold mb-6 text-green-500">Calculador de Interés Compuesto</h1>
                     <div className="mb-4">
-                        <label htmlFor="capital" className="block text-sm font-medium text-gray-200">Capital "P"</label>
+                        <label htmlFor="capital" title="Es la cantidad de dinero inicial que se invierte o se presta" className="block text-sm font-medium text-gray-200">Capital "P"</label>
                         <input id="capital" onChange={setCapitalOn} className="mt-1 block w-full px-3 py-2 border border-gray-600 shadow-inner bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500 sm:text-sm text-white"/>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="interes" className="block text-sm font-medium text-gray-200">Interés "i" %</label>
+                        <label htmlFor="interes" title='Es el costo o la ganancia generada por el capital invertido durante un período de tiempo determinado.' className="block text-sm font-medium text-gray-200">Interés "i" %</label>
                         <input id="interes" onChange={setInteresOn} className="mt-1 block w-full px-3 py-2 border border-gray-600 shadow-inner bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500 sm:text-sm text-white"/>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="periodo" className="block text-sm font-medium text-gray-200">Período "n" (En años)</label>
+                        <label htmlFor="periodo" title='Es el tiempo durante el cual se calcula el interés. (En años)' className="block text-sm font-medium text-gray-200">Período "n" (En años)</label>
                         <input id="periodo" onChange={setPeriodoOn} className="mt-1 block w-full px-3 py-2 border border-gray-600 shadow-inner bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500 sm:text-sm text-white"/>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="tipoPeriodo" className="block text-sm font-medium text-gray-200">Tipo de periodo</label>
+                        <label htmlFor="tipoPeriodo" title='El periodo de tiempo en el que se calcula el interés. Puede ser anual, mensual, trimestral, etc.' className="block text-sm font-medium text-gray-200">Tipo de periodo</label>
                         <select id='tipoPeriodo' className="mt-1 block w-full px-3 py-2 border border-gray-600 shadow-inner bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-500 sm:text-sm text-white" value={tipoPeriodo} onChange={setTipoPeriodoOn}>
                             {tipoPeriodoOpt.map((tipoPeriodoO) => (
                                 <option key={tipoPeriodoO.value} value={tipoPeriodoO.value}>{tipoPeriodoO.label}</option>
