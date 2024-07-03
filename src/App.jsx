@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Modal from './components/Modal';
 import CalculadorIS from './components/CalculadorIS';
+import CalculadorIC from './components/CalculadorIC';
 import logo from '../public/Logo.png';
 
 function App() {
   const [isModalISOpen, setIsModalISOpen] = useState(false);
+  const [isModalICOpen, setIsModalICOpen] = useState(false);
   const [IS_Result, setIS_Result] = useState(null);
   const [tablesData, setTablesData] = useState([]);
 
@@ -14,6 +16,14 @@ function App() {
 
   const closeModalIS = () => {
     setIsModalISOpen(false);
+  };
+
+  const openModalIC = () => {
+    setIsModalICOpen(true);
+  };
+
+  const closeModalIC = () => {
+    setIsModalICOpen(false);
   };
 
   const handleInteresSimple = (resultado, tabla) => {
@@ -36,6 +46,10 @@ function App() {
         <button className="px-6 py-3 bg-[#00ff00ff] text-black font-bold rounded-lg shadow-md hover:bg-[#91ff00] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" onClick={openModalIS}>Tasa Interes Simple</button>
         <Modal isOpen={isModalISOpen} onClose={closeModalIS}>
           <CalculadorIS onCalculate={handleInteresSimple}/>
+        </Modal>
+        <button className="px-6 py-3 bg-[#00ff00ff] text-black font-bold rounded-lg shadow-md hover:bg-[#91ff00] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" onClick={openModalIC}>Tasa Interes Compuesto</button>
+        <Modal isOpen={isModalICOpen} onClose={closeModalIC}>
+          <CalculadorIC />
         </Modal>
 
         {IS_Result !== null && (
@@ -76,6 +90,3 @@ function App() {
 }
 
 export default App;
-
-
-

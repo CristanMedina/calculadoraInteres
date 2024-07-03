@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TablaInteres from './TablaInteres';
+import TablaIS from './TablaIS';
 
 const CalculadorIS = ({ onCalculate }) => {
     const tipoPeriodoOpt = [
@@ -110,7 +110,7 @@ const CalculadorIS = ({ onCalculate }) => {
                         </div>
                     </div>
                     <div className="w-full md:w-1/3 md:ml-4 md:overflow-y-auto" style={{ maxHeight: '600px', minWidth: '480px' }}>
-                        <TablaInteres capital={capital} interes={interes / 100} periodo={periodo * tipoPeriodo} />
+                        <TablaIS capital={capital} interes={interes / 100} periodo={periodo * tipoPeriodo} />
                     </div>
                 </div>
             )}

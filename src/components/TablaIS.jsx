@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TablaInteres = ({ capital, interes, periodo }) => {
+const TablaIS = ({ capital, interes, periodo }) => {
     const capitalInicial = capital;
     const [datosTabla, setDatosTabla] = useState([]);
 
@@ -8,13 +8,13 @@ const TablaInteres = ({ capital, interes, periodo }) => {
         const data = [];
         for (let n = 1; n <= periodo; n++) {
             const interesAcumulado = capitalInicial * interes * n;
-            const ultimoMonto = capitalInicial + interesAcumulado;
+            const monto = capitalInicial + interesAcumulado;
 
             data.push({
                 Año: n,
                 capital1: formatNumber(capitalInicial),
                 interes: formatNumber(interesAcumulado.toFixed(2)),
-                capital2: formatNumber(ultimoMonto.toFixed(2))
+                capital2: formatNumber(monto.toFixed(2))
             });
         }
         setDatosTabla(data);
@@ -57,6 +57,6 @@ const TablaInteres = ({ capital, interes, periodo }) => {
     );
 };
 
-export default TablaInteres;
+export default TablaIS;
 
 
