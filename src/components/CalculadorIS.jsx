@@ -20,18 +20,28 @@ const CalculadorIS = ({ onCalculate }) => {
 
     const setCapitalOn = (e) => {
       const value = e.target.value.replace(/,/g, '');
-        setCapital(parseFloat(value));
-    };
-
-    const setInteresOn = (e) => {
+      const revision = parseFloat(value);
+      if (!isNaN(revision) && revision >= 0) {
+          setCapital(revision);
+      }
+  };
+  
+  const setInteresOn = (e) => {
       const value = e.target.value.replace(/,/g, '');
-        setInteres(parseFloat(value));
-    };
-
-    const setPeriodoOn = (e) => {
+      const revision = parseFloat(value);
+      if (!isNaN(revision) && revision >= 0) {
+          setInteres(revision);
+      }
+  };
+  
+  const setPeriodoOn = (e) => {
       const value = e.target.value.replace(/,/g, '');
-        setPeriodo(parseFloat(value));
-    };
+      const revision = parseFloat(value);
+      if (!isNaN(revision) && revision >= 0) {
+          setPeriodo(revision);
+      }
+  };
+  
 
     const setTipoPeriodoOn = (e) => {
         setTipoPeriodo(Number(e.target.value));
