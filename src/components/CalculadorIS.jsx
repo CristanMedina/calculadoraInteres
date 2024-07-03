@@ -52,8 +52,8 @@ const CalculadorIS = ({ onCalculate }) => {
       if (!isNaN(capital) && !isNaN(interes) && !isNaN(periodo) && !isNaN(tipoPeriodo)) {
         const tablaGenerada = [];
 
-        for (let i = 1; i <= periodo * tipoPeriodo; i++) {
-          const interesPeriodo = capital * (interes / 100) * i;
+        for (let n = 1; n <= periodo * tipoPeriodo; n++) {
+          const interesPeriodo = capital * (interes / 100) * n;
           tablaGenerada.push(`$ ${interesPeriodo.toLocaleString()}`);
         }
         setTablaDatos(tablaGenerada);

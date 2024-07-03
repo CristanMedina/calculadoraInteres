@@ -42,19 +42,19 @@ function App() {
           <div className="mt-4 w-full md:max-w-xl p-10">
             
             {tablesData.map((tabla, index) => (
-              <div key={index} className="mb-8">
+              <div key={index} className="mb-8 text-center">
                 <h2 className="text-xl font-semibold text-[#00ff00ff] mb-2">Resultado del Interés Simple:</h2>
                 <p className="text-white mb-4">Interés Total: ${IS_Result.toLocaleString()}</p>
                 <h3 className="text-xl font-semibold text-[#00ff00ff] mb-2">Tabla {index + 1} de Interés Simple:</h3>
                 <div className="shadow-md rounded-lg overflow-hidden">
                   <table className="w-full divide-y divide-gray-800">
-                    <thead className="bg-[#00ff00ff]">
+                    <thead className="bg-[#00ff00ff] text-center">
                       <tr>
-                        <th className="px-3 py-2 text-left text-xs font-extrabold text-gray-900 uppercase tracking-wider">Período</th>
-                        <th className="px-3 py-2 text-left text-xs font-extrabold text-gray-900 uppercase tracking-wider">Interés</th>
+                        <th className="px-3 py-2 text-xs font-extrabold text-gray-900 uppercase tracking-wider">Período</th>
+                        <th className="px-3 py-2 text-xs font-extrabold text-gray-900 uppercase tracking-wider">Monto al final del año</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-400">
+                    <tbody className="divide-y text-center divide-gray-400">
                       {tabla.map((item, rowIndex) => (
                         <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-gray-600' : 'bg-gray-700'}>
                           <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-400">Año {rowIndex + 1}</td>
@@ -63,7 +63,7 @@ function App() {
                       ))}
                     </tbody>
                   </table>
-                  <button className="mt-5 mb-3 ml-3 px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400" onClick={() => removeTable(index)}>Eliminar Tabla</button>
+                  <button className="mt-5 mb-3 px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400" onClick={() => removeTable(index)}>Eliminar Tabla</button>
                 </div>
               </div>
             ))}
