@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TablaInteres from './TablaInteres';
 
-const CalculadorIS = () => {
+const CalculadorIS = ({ onCalculate }) => {
     const tipoPeriodoOpt = [
         { value: 12, label: 'Mensual' },
         { value: 4, label: 'Trimestral' },
@@ -16,6 +16,7 @@ const CalculadorIS = () => {
     const [tipoPeriodo, setTipoPeriodo] = useState(tipoPeriodoOpt[0].value);
     const [resultado, setResultado] = useState(null);
     const [mostrarTabla, setMostrarTabla] = useState(false);
+    const [tablaDatos, setTablaDatos] = useState([]);
 
     const setCapitalOn = (e) => {
       const value = e.target.value.replace(/,/g, '');
@@ -48,11 +49,19 @@ const CalculadorIS = () => {
     }, [capital, interes, periodo, tipoPeriodo]);
 
     const crearTabla = () => {
-        if (!isNaN(capital) && !isNaN(interes) && !isNaN(periodo) && !isNaN(tipoPeriodo)) {
-            setMostrarTabla(true);
-        } else {
-            setMostrarTabla(false);
+      if (!isNaN(capital) && !isNaN(interes) && !isNaN(periodo) && !isNaN(tipoPeriodo)) {
+        const tablaGenerada = [];
+
+        for (let i = 1; i <= periodo * tipoPeriodo; i++) {
+          const interesPeriodo = capital * (interes / 100) * i;
+          tablaGenerada.push(`$ ${interesPeriodo.toLocaleString()}`);
         }
+        setTablaDatos(tablaGenerada);
+        setMostrarTabla(true);
+        onCalculate(resultado, tablaGenerada);
+      } else {
+        setMostrarTabla(false);
+      }
     };
 
     return (
